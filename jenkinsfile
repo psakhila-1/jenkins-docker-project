@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Code') {
+            steps {
+                git 'https://github.com/YOUR_USERNAME/java-docker-app.git'
+            }
+        }
+
+        stage('Build JAR using Maven') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t java-docker-app .'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                sh 'docker stop java-app || true'
+                sh 'docker rm java-app || true'
+                sh 'docker run -d --name java-app -p 8080:8080 java-docker-app'
+            }
+        }
+    }
+}
+
