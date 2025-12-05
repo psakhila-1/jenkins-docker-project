@@ -1,1 +1,2 @@
-com/example/App.class
+com/example/webapp/WebappApplication.class
+com/example/webapp/HelloController.class

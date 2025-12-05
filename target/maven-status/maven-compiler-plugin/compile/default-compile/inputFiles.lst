@@ -1,1 +1,2 @@
-/home/ec2-user/webapp/src/main/java/com/example/App.java
+/home/ec2-user/webapp/src/main/java/com/example/webapp/WebappApplication.java
+/home/ec2-user/webapp/src/main/java/com/example/webapp/HelloController.java

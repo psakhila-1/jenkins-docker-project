@@ -1,9 +1,10 @@
-# Step 1: Base image
 FROM eclipse-temurin:17-jdk
 
-# Step 2: Add JAR file into container
-COPY target/java-docker-app-1.0.0.jar app.jar
+WORKDIR /app
 
-# Step 3: Run the application
+COPY target/webapp-1.0.0.jar app.jar
+
+EXPOSE 9090
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
